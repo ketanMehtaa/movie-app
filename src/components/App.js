@@ -3,7 +3,7 @@ import { data } from "../data";
 import NavBar from "./NavBar";
 import MovieCard from "./MovieCard";
 import { addMovies, setShowFavourites } from "../actions";
-
+import { StoreContext } from "../index";
 class App extends React.Component {
   componentDidMount() {
     const { store } = this.props;
@@ -35,7 +35,7 @@ class App extends React.Component {
     const displayMovies = showFavourites ? favourites : list;
     return (
       <div className="App">
-        <NavBar dispatch={this.props.store.dispatch} search={search} />
+        <NavBar search={search} />
         <div className="main">
           <div className="tabs">
             <div
@@ -71,4 +71,13 @@ class App extends React.Component {
   }
 }
 
-export default App;
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <StoreContext.Consumer>
+        {(store) => <App store={store} />}
+      </StoreContext.Consumer>
+    );
+  }
+}
+export default AppWrapper;

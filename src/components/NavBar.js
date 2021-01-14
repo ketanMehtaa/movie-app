@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { addMovieToList, handleMovieSearch } from "../actions";
-import { data } from "../data";
-import { StoreContext } from "..";
+// import { data } from "../data";
+import { StoreContext } from "../index";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,16 +59,16 @@ export default class Navbar extends Component {
 
 // nevbar code is changed and the below code will help after some time
 
-// class NavbarWrapper extends React.Component {
-//   render() {
-//     return (
-//       <StoreContext.Consumer>
-//         {(store) => (
-//           <Navbar dispatch={store.dispatch} search={this.props.search} />
-//         )}
-//       </StoreContext.Consumer>
-//     );
-//   }
-// }
+class NavbarWrapper extends React.Component {
+  render() {
+    return (
+      <StoreContext.Consumer>
+        {(store) => (
+          <Navbar dispatch={store.dispatch} search={this.props.search} />
+        )}
+      </StoreContext.Consumer>
+    );
+  }
+}
 
-// export default NavbarWrapper;
+export default NavbarWrapper;
