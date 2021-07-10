@@ -69,6 +69,6 @@ class NavbarWrapper extends React.Component {
       </StoreContext.Consumer>
     );
   }
-}
+} 
 
 export default NavbarWrapper;

@@ -55,6 +55,25 @@ class Provider extends React.Component {
     );
   }
 }
+// // const connectedAppCOmponent = connect(callback)(app);
+// export function connect(callback) {
+//   return function (Component) {
+//     return class ConnectedComponent extends React.Component {
+//       render() {
+//         return (
+//           <StoreContext.Consumer>
+//             {(store) => {
+//               const state = store.getState();
+//               const dataToBePassedAsProps = callback(state);
+//               return <Component movies={movies} search={search} dispatch={store.dispatch}/>;
+//             }}
+//           </StoreContext.Consumer>
+//         );
+//       }
+//     };
+//   };
+// }
+
 // console.log("BEFORE_STATE", store.getState());
 
 // store.dispatch({

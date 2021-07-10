@@ -42,7 +42,7 @@ export function addMovieToList(movie) {
 }
 
 export function handleMovieSearch(movie) {
-  const url = `http://www.omdbapi.com/?apikey=4746e98f&t=${movie}`;
+  const url = `https://www.omdbapi.com/?apikey=4746e98f&t=${movie}`;
   // http://www.omdbapi.com/?i=tt3896198&apikey=4746e98f
   return function (dispatch) {
     fetch(url)
